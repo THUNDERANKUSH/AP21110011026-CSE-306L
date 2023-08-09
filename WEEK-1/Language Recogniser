@@ -1,0 +1,55 @@
+def language_recognizer(input_string):
+    current_state = "Q0"
+
+    for symbol in input_string:
+        if current_state == "Q0":
+            if symbol == "a":
+                current_state = "Q1"
+            elif symbol == "b":
+                current_state = "Q2"
+            else:
+                return "Invalid token"
+        elif current_state == "Q1":
+            if symbol == "a":
+                current_state = "Q0"
+            elif symbol == "b":
+                current_state = "Q3"
+            else:
+                return "Invalid token"
+        elif current_state == "Q2":
+            if symbol == "a":
+                current_state = "Q3"
+            elif symbol == "b":
+                current_state = "Q0"
+            else:
+                return "Invalid token"
+        elif current_state == "Q3":
+            if symbol == "a":
+                current_state = "Q2"
+            elif symbol == "b":
+                current_state = "Q1"
+            else:
+                return "Invalid token"
+    
+    if current_state == "Q0":
+        return "String accepted"
+    else:
+        return "String not accepted"
+
+ 
+test_cases = [
+    ("aabb", "String accepted"),
+    ("abab", "String accepted"),
+    ("aaabb", "String not accepted"),
+    ("aaa", "String not accepted"),
+    ("abcd", "Invalid token")
+]
+string_lengths = []
+ 
+user_input = input(f"Enter a string (e.g., 'aabb', 'abab'): ")
+result = language_recognizer(user_input)
+
+string_lengths.append(len(user_input))
+
+print(f"Input: {user_input}")
+print(f"Output: {result}")
