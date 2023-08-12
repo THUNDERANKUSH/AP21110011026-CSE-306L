@@ -1,0 +1,23 @@
+'''Implementation of Language recognizer for set of all strings ending with two symbols of
+same type.'''
+
+
+#CODE-
+
+import re
+
+def is_valid_string(s):
+    pattern = r'(a*b*|b*a*)[ab]\1$'
+    return re.match(pattern, s) is not None
+ 
+input_strings = []
+ 
+input_string = input("Enter a string consisting of 'a' and 'b': ")
+input_strings.append(input_string)
+
+ 
+for s in input_strings:
+    if is_valid_string(s):
+        print(f'"{s}" is a valid string.')
+    else:
+        print(f'"{s}" is not a valid string.')
