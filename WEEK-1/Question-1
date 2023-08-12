@@ -1,3 +1,9 @@
+'''Implementation of Language recognizer for set of all strings over input alphabet ∑={a,b}
+containing even number of a’s and even number of b’s.'''
+
+
+#CODE-
+
 def language_recognizer(input_string):
     current_state = "Q0"
 
