@@ -51,3 +51,7 @@ class BinarySearchTree {
         System.out.println(symbolTable.search("variable1")); // Output: 42
     }
 }
+
+
+OUTPUT -
+42
