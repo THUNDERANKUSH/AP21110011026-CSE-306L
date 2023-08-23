@@ -5,6 +5,7 @@
  TITLE:
         Symbol Table Implementation
 
+
 STATEMENT:
         Symbol table is an important data structure created and maintained by compilers in order to
         store information about the occurrence of various identifiers such as variable names, function
@@ -14,12 +15,18 @@ STATEMENT:
         • Binary Search Tree
         • Hash table
         • And other ways.
+In this lab session, you are required to analyse the various implementations. You need to write
+code for at least two ways of implementation. Test your code with different test cases. Submit
+a report of your analysis and executable code by the end of the session.
+
  
  PROCEDURE:
             I written the code in c programming language,first i take a character input(EXPRESSION) and i am creating two array to store the values 
             and the adress of that values in the pointer array and if the input is alphabet it prints identifier for this i am using is 
             isalpha() function and if it is not i am comparing with some operators using if block if it is a special character it will 
             print operator.
+
+
  CODE:
 // symbol table Implementation
 //Ankush Kumar AP21110011026
@@ -70,10 +77,12 @@ int main()
 	return 0;
 }
 
+
 INPUT:
          s=a+b;
+
          
-OUTPUT:
+OUTPUT -
          Input the expression ending with ; sign:s=a+b;
 
  Symbol Table display
@@ -87,6 +96,8 @@ Symbol 	 addr 			 type
  + 	 0x562b28f42c00 	 operator
 
  b 	 0x562b28f42c40 	 identifier
+
+
 
  CONCLUSION:
              Symbol table is a data structure used by the compiler, where each identifier in program’s source code is stored 
