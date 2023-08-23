@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<stdlib.h>
+int main()
+{
+ int x=0, n, i=0,j=0,p=0;
+ void *ptr,*id_address[5];
+ char ch,id_Array2[15],id_Array3[15],c;
+ printf("Input the expression ending with ; sign:");
+ char s[20];
+ scanf("%s",s);
+ while(s[i]!=';')
+ {
+  id_Array2[i]=s[i];
+  i++;
+ }
+ n=i-1;
+ printf("\n Symbol Table display\n");
+ printf("Symbol \t addr \t\t\t type");
+ while(j<=n)
+ {
+  c=id_Array2[j];
+  if(isalpha(c))
+  {
+   ptr=malloc(c);
+   id_address[x]=ptr;
+   id_Array3[x]=c;
+   printf("\n %c \t %p \t identifier\n",c,ptr);
+   x++;
+   j++;
+  }
+  else
+  {
+   ch=c;
+   if(ch=='+'||ch=='-'||ch=='*'||ch=='/' || ch=='%'|| ch=='='|| ch=='<' || ch=='>')
+   {
+    ptr=malloc(ch);
+    id_address[x]=ptr;
+    printf("\n %c \t %p \t operator\n",ch,ptr);
+    x++;
+    j++;
+   }
+	}
+}
+	return 0;
+}
+
+
+
+OUTPUT -
+
+  Input the expression ending with ; sign:s=a+b;
+Symbol Table display
+Symbol 	 addr 			 type
+ s 	 0x1734ac0 	 identifier
+
+ = 	 0x1734b40 	 operator
+
+ a 	 0x1734b90 	 identifier
+
+ + 	 0x1734c00 	 operator
+
+ b 	 0x1734c40 	 identifier
