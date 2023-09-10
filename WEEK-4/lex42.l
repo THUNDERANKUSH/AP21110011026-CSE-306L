@@ -1,3 +1,5 @@
+//2. Count the number of Lines in given input
+
 %{
 int num_lines=0;
 %}
